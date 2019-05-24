@@ -1,0 +1,174 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 04/04/2017 06:08
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-old-handphone:before { content: "\f100"; }
+.flaticon-telephone:before { content: "\f101"; }
+.flaticon-email-filled-closed-envelope:before { content: "\f102"; }
+.flaticon-black-back-closed-envelope-shape:before { content: "\f103"; }
+.flaticon-trophy-for-sports:before { content: "\f104"; }
+.flaticon-people-9:before { content: "\f105"; }
+.flaticon-people-8:before { content: "\f106"; }
+.flaticon-medical-41:before { content: "\f107"; }
+.flaticon-science-1:before { content: "\f108"; }
+.flaticon-transport-7:before { content: "\f109"; }
+.flaticon-medical-40:before { content: "\f10a"; }
+.flaticon-envelope:before { content: "\f10b"; }
+.flaticon-medical-39:before { content: "\f10c"; }
+.flaticon-syringe:before { content: "\f10d"; }
+.flaticon-medical-38:before { content: "\f10e"; }
+.flaticon-science:before { content: "\f10f"; }
+.flaticon-medical-37:before { content: "\f110"; }
+.flaticon-transport-6:before { content: "\f111"; }
+.flaticon-transport-5:before { content: "\f112"; }
+.flaticon-medical-36:before { content: "\f113"; }
+.flaticon-medical-35:before { content: "\f114"; }
+.flaticon-heartbeat:before { content: "\f115"; }
+.flaticon-medical-34:before { content: "\f116"; }
+.flaticon-people-7:before { content: "\f117"; }
+.flaticon-medical-33:before { content: "\f118"; }
+.flaticon-medical-32:before { content: "\f119"; }
+.flaticon-people-6:before { content: "\f11a"; }
+.flaticon-nature:before { content: "\f11b"; }
+.flaticon-medical-31:before { content: "\f11c"; }
+.flaticon-medical-30:before { content: "\f11d"; }
+.flaticon-medical-29:before { content: "\f11e"; }
+.flaticon-people-5:before { content: "\f11f"; }
+.flaticon-login:before { content: "\f120"; }
+.flaticon-calendar:before { content: "\f121"; }
+.flaticon-clock-1:before { content: "\f122"; }
+.flaticon-clock:before { content: "\f123"; }
+.flaticon-transport-4:before { content: "\f124"; }
+.flaticon-people-4:before { content: "\f125"; }
+.flaticon-medical-28:before { content: "\f126"; }
+.flaticon-people-3:before { content: "\f127"; }
+.flaticon-medical-27:before { content: "\f128"; }
+.flaticon-medical-26:before { content: "\f129"; }
+.flaticon-medical-25:before { content: "\f12a"; }
+.flaticon-healthy:before { content: "\f12b"; }
+.flaticon-medical-24:before { content: "\f12c"; }
+.flaticon-chat-2:before { content: "\f12d"; }
+.flaticon-chat-1:before { content: "\f12e"; }
+.flaticon-chat:before { content: "\f12f"; }
+.flaticon-health-care-1:before { content: "\f130"; }
+.flaticon-right-arrow-1:before { content: "\f131"; }
+.flaticon-left-arrow-1:before { content: "\f132"; }
+.flaticon-medical-23:before { content: "\f133"; }
+.flaticon-left-arrow:before { content: "\f134"; }
+.flaticon-right-arrow:before { content: "\f135"; }
+.flaticon-add:before { content: "\f136"; }
+.flaticon-medical-22:before { content: "\f137"; }
+.flaticon-medical-21:before { content: "\f138"; }
+.flaticon-people-2:before { content: "\f139"; }
+.flaticon-transport-3:before { content: "\f13a"; }
+.flaticon-medical-20:before { content: "\f13b"; }
+.flaticon-medical-19:before { content: "\f13c"; }
+.flaticon-medical-18:before { content: "\f13d"; }
+.flaticon-medical-17:before { content: "\f13e"; }
+.flaticon-medical-16:before { content: "\f13f"; }
+.flaticon-transport-2:before { content: "\f140"; }
+.flaticon-clinic:before { content: "\f141"; }
+.flaticon-medical-15:before { content: "\f142"; }
+.flaticon-nurse-head:before { content: "\f143"; }
+.flaticon-checkbox-pen-outline:before { content: "\f144"; }
+.flaticon-medical-14:before { content: "\f145"; }
+.flaticon-medical-13:before { content: "\f146"; }
+.flaticon-clock-circular-outline:before { content: "\f147"; }
+.flaticon-medical-12:before { content: "\f148"; }
+.flaticon-mark:before { content: "\f149"; }
+.flaticon-nurse-1:before { content: "\f14a"; }
+.flaticon-tool-2:before { content: "\f14b"; }
+.flaticon-medical-11:before { content: "\f14c"; }
+.flaticon-shape-1:before { content: "\f14d"; }
+.flaticon-sign:before { content: "\f14e"; }
+.flaticon-person:before { content: "\f14f"; }
+.flaticon-circle:before { content: "\f150"; }
+.flaticon-medical-10:before { content: "\f151"; }
+.flaticon-line:before { content: "\f152"; }
+.flaticon-medical-9:before { content: "\f153"; }
+.flaticon-tool-1:before { content: "\f154"; }
+.flaticon-calendar-with-a-clock-time-tools:before { content: "\f155"; }
+.flaticon-magnifier:before { content: "\f156"; }
+.flaticon-hospital-buildings:before { content: "\f157"; }
+.flaticon-medical-8:before { content: "\f158"; }
+.flaticon-multiple-users-silhouette:before { content: "\f159"; }
+.flaticon-medical-7:before { content: "\f15a"; }
+.flaticon-medical-6:before { content: "\f15b"; }
+.flaticon-opened-email-envelope:before { content: "\f15c"; }
+.flaticon-people-1:before { content: "\f15d"; }
+.flaticon-medical-5:before { content: "\f15e"; }
+.flaticon-transport-1:before { content: "\f15f"; }
+.flaticon-three:before { content: "\f160"; }
+.flaticon-shape:before { content: "\f161"; }
+.flaticon-medical-4:before { content: "\f162"; }
+.flaticon-tool:before { content: "\f163"; }
+.flaticon-map-marker:before { content: "\f164"; }
+.flaticon-add-square-button:before { content: "\f165"; }
+.flaticon-medical-kit:before { content: "\f166"; }
+.flaticon-medical-3:before { content: "\f167"; }
+.flaticon-checked-mark:before { content: "\f168"; }
+.flaticon-medical-2:before { content: "\f169"; }
+.flaticon-medical-1:before { content: "\f16a"; }
+.flaticon-blocks-with-angled-cuts:before { content: "\f16b"; }
+.flaticon-straight-quotes:before { content: "\f16c"; }
+.flaticon-transport:before { content: "\f16d"; }
+.flaticon-health-care:before { content: "\f16e"; }
+.flaticon-cross:before { content: "\f16f"; }
+.flaticon-command:before { content: "\f170"; }
+.flaticon-transfusion:before { content: "\f171"; }
+.flaticon-focus:before { content: "\f172"; }
+.flaticon-warning:before { content: "\f173"; }
+.flaticon-unlink:before { content: "\f174"; }
+.flaticon-play-button-1:before { content: "\f175"; }
+.flaticon-medal:before { content: "\f176"; }
+.flaticon-credit-card:before { content: "\f177"; }
+.flaticon-facebook:before { content: "\f178"; }
+.flaticon-twitter:before { content: "\f179"; }
+.flaticon-flickr:before { content: "\f17a"; }
+.flaticon-instagram:before { content: "\f17b"; }
+.flaticon-two-blood-drops:before { content: "\f17c"; }
+.flaticon-surgeon-doctor:before { content: "\f17d"; }
+.flaticon-technology:before { content: "\f17e"; }
+.flaticon-linkedin-logo:before { content: "\f17f"; }
+.flaticon-facebook-logo:before { content: "\f180"; }
+.flaticon-black-check-box:before { content: "\f181"; }
+.flaticon-twitter-logo-on-black-background:before { content: "\f182"; }
+.flaticon-24-hours-phone-assistance-service:before { content: "\f183"; }
+.flaticon-people:before { content: "\f184"; }
+.flaticon-folder:before { content: "\f185"; }
+.flaticon-nurse:before { content: "\f186"; }
+.flaticon-link-symbol:before { content: "\f187"; }
+.flaticon-medical-assistance-24-hours:before { content: "\f188"; }
+.flaticon-medical:before { content: "\f189"; }
+.flaticon-play-button:before { content: "\f18a"; }
+.flaticon-tags:before { content: "\f18b"; }
+.flaticon-four-black-squares:before { content: "\f18c"; }
+.flaticon-square-shape-shadow:before { content: "\f18d"; }
+.flaticon-flickr-website-logo-silhouette:before { content: "\f18e"; }
+.flaticon-twitter-logo-silhouette:before { content: "\f18f"; }
+.flaticon-cream:before { content: "\f190"; }
