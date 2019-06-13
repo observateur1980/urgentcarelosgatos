@@ -49,15 +49,15 @@
                 <img src="{% static 'images/urgentcare.png' %}" alt="" width="241" height="250">
               </a>
               
-              <ul class="menuzord-menu">
-                <li class="active"><a href="#home">Home</a></li>
-                
+              <ul id="navMenus" class="menuzord-menu" >
+
+                <li id="homemenu"><a href="{% url 'home:home' %}">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Insurance & Billing</a></li>
                 <li><a href="#">Appointments</a></li>
                 <li><a href="#">Facility</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li id="contactmenu"><a  href="{% url 'home:contact' %}">Contact</a></li>
                 
               </ul>
             </nav>
@@ -65,3 +65,4 @@
         </div>
       </div>
     </header>
+
