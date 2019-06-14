@@ -5,7 +5,7 @@
   <div class="main-content">
 
       <!-- Section: inner-header -->
-      <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
+      <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="{% static 'images/slider/par_slider3.jpg'%}">
         <div class="container pt-70 pb-50">
           <!-- Section Content -->
           <div class="section-content">
@@ -30,53 +30,36 @@
               <div class="contact-info text-center pt-60 pb-60 border-right">
                 <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
                 <h4>Call Us</h4>
-                <h6 class="text-gray">Phone: +262 695 2601</h6>
+                <h6 class="text-gray">Phone: (408) 384-9719</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center  pt-60 pb-60 border-right">
                 <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
                 <h4>Address</h4>
-                <h6 class="text-gray">121 King Street, Australia</h6>
+                <h6 class="text-gray">16400 Lark Ave, Los Gatos, CA 95032</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center  pt-60 pb-60">
                 <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
                 <h4>Email</h4>
-                <h6 class="text-gray">you@yourdomain.com</h6>
+                <h6 class="text-gray">losgatosurgentcare@gmail.com</h6>
               </div>
             </div>
           </div>
           <div class="row pt-10">
             <div class="col-md-5">
             <h4 class="mt-0 mb-30 line-bottom">Find Our Location</h4>
-            <!-- Google Map HTML Codes -->
-            <div 
-              data-address="121 King Street, Melbourne Victoria 3000 Australia"
-              data-popupstring-id="#popupstring1"
-              class="map-canvas autoload-map"
-              data-mapstyle="style8"
-              data-height="420"
-              data-latlng="-37.817314,144.955431"
-              data-title="sample title"
-              data-zoom="12"
-              data-marker="images/map-marker.png">
-            </div>
-            <div class="map-popupstring hidden" id="popupstring1">
-              <div class="text-center">
-                <h3>CharityFund Office</h3>
-                <p>121 King Street, Melbourne Victoria 3000 Australia</p>
-              </div>
-            </div>
-            <!-- Google Map Javascript Codes -->
-            <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWE4mHmR9GyPsHSOVZrSCOOljk8DU9B4"></script>
-            <script src="js/google-map-init.js"></script>
+            <img src="{% static 'images/mapurgentcare.png' %}" alt="" height="400" width="500">
+            
+            
+            
             </div>
             <div class="col-md-7">
               <h4 class="mt-0 mt-sm-30 mb-30 line-bottom">Interested in discussing?</h4>
               <!-- Contact Form -->
-              <form id="contact_form" name="contact_form" class="" method="POST">
+              <form id="contact_form" name="contact_form" class="" method="POST" >
                 {% csrf_token %}
                 
                 <div class="row">
@@ -115,47 +98,113 @@
                 </div>
                 <div class="form-group">
                   <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                  <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                 
+                 
+                  <button id="sndmsg" name="sndmsg" type="submit"
+                  
+                  class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" >Send your message
+                
+                </button>
+              <i class="fa fa-refresh fa-spin" id="loadpic" style="visibility: hidden;" ></i>
+                
+                
                   <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Reset</button>
                 </div>
               </form>
   
-              <!-- Contact Form Validation-->
-              <script type="text/javascript">
-                $("#contact_form").validate({
-                  submitHandler: function(form) {
-                    var form_btn = $(form).find('button[type="submit"]');
-                    var form_result_div = '#form-result';
-                    $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                    var form_btn_old_msg = form_btn.html();
-                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                    $(form).ajaxSubmit({
-                      dataType:  'json',
-                      success: function(data) {
-                        if( data.status == 'true' ) {
-                          $(form).find('.form-control').val('');
-                        }
-                        form_btn.prop('disabled', false).html(form_btn_old_msg);
-                        $(form_result_div).html(data.message).fadeIn('slow');
-                        setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                      }
-                    });
-                  }
-                });
-              </script>
+              
             </div>
           </div>
         </div>
       </section>  </div>
     <!-- end main-content -->
+<script>
+      $("#navMenus li.active").removeClass("active");
+      // adding classname 'active' to current click li 
+      $('#contactmenu').addClass("active");
+</script>
+
+
+<script>
+      $(document).ready(function(){
+         
+         
+         
+     $("#sndmsg").click(function ()
+     {
+        
+      form_name=document.getElementById("form_name").value;
+      form_email=document.getElementById("form_email").value;
+      form_subject=document.getElementById("form_subject").value;
+      form_phone=document.getElementById("form_phone").value;
+      form_message=document.getElementById("form_message").value;
+      
+      
+        
+        $('#loadpic').attr("style", "visibility: visible");
+        $('#sndmsg').text('Sending message...').attr('disabled', true);
+
+
+        $.ajax({
+                  type: "POST",
+                  url: "{% url 'home:sending_email' %}",
+                  data: {
+                            'form_name':form_name,
+                            'form_email':form_email,
+                            'form_subject':form_subject,
+                            'form_phone':form_phone,
+                            'form_message':form_message,
+                            
+                            'csrfmiddlewaretoken': '{{ csrf_token }}',
+
+                          },
+                  dataType: 'json',
+
+                  success: function (data) {
+                  if (data) {
+                      
+                      if (data['my_response']=='OK'){
+                        document.getElementById("form_name").value='';
+                        document.getElementById("form_email").value='';
+                        document.getElementById("form_subject").value='';
+                        document.getElementById("form_phone").value='';
+                        document.getElementById("form_message").value='';
+
+                        $('#loadpic').attr("style", "visibility: hidden");
+                        $('#sndmsg').text('SEND YOUR MESSAGE').attr('disabled', false);
+
+
+                      } else {
+
+                          alert('Something went wrong!');
+                      }
 
 
 
 
-  <script>
-        $("#navMenus li.active").removeClass("active");
-        // adding classname 'active' to current click li 
-        $('#contactmenu').addClass("active");
-  </script>
+          }
+
+          }
+
+
+
+      });
+        
+     }
+     );
+     
+     
+     
+      
+     
+     
+        });
+       </script>
+     
+
+  
+
+
+
+
   {% endblock %}

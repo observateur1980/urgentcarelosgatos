@@ -4,7 +4,7 @@ from django.views.generic.edit import FormView
 from . forms import ContactForm
 from django.core.mail import send_mail
 from urgentcarelosgatos.settings import EMAIL_HOST_USER
-
+from django.http import JsonResponse
 
 class Home(TemplateView):
 	
@@ -47,7 +47,7 @@ class Contact(FormView):
 	template_name = 'home/contact.html'
 	form_class = ContactForm
 	success_url = 'contact'
-
+	
 	# def get_context_data(self, *args, **kwargs):
 	# 	context = super(Contact, self).get_context_data(*args, **kwargs)		
 	# 	context["bck_image"] = 'images/contact.jpg'
@@ -65,3 +65,34 @@ class Contact(FormView):
 		recipient_list = ['pacoqara@gmail.com',]
 		send_mail( subject, message, email_from, recipient_list )
 		return super(Contact, self).form_valid(form)
+
+
+
+def sending_email(request):
+	
+	my_response = 'OK'
+	
+	if request.is_ajax():
+		form_name = request.POST.get('form_name')
+		form_email = request.POST.get('form_email')
+		form_subject = request.POST.get('form_subject')
+		form_phone = request.POST.get('form_phone')
+		form_message = request.POST.get('form_message')
+
+		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n' + form_message
+		
+		email_from = EMAIL_HOST_USER
+		recipient_list = ['pacoqara@gmail.com',]
+		send_mail( form_subject, message, form_email, recipient_list )
+		
+	data = { 'my_response': my_response }
+
+	return JsonResponse(data)
+        
+
+
+    
+
+    
+
+    
