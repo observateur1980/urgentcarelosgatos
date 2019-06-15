@@ -55,6 +55,7 @@ class Contact(FormView):
 	# 	return context
 	
 	def form_valid(self, form):
+		
 		name = form.cleaned_data['name']
 		phone = form.cleaned_data['phone']
 		email = form.cleaned_data['email']
@@ -91,6 +92,29 @@ def sending_email(request):
         
 
 
+
+def make_appointment(request):
+	
+	my_response = 'OK'
+	
+	if request.is_ajax():
+		modal_form_name = request.POST.get('modal_form_name')
+		modal_form_email = request.POST.get('modal_form_email')
+		modal_form_phone = request.POST.get('modal_form_phone')
+		
+		modal_form_appontment_date = request.POST.get('modal_form_appontment_date')
+		modal_form_message = request.POST.get('modal_form_message')
+
+		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n' + modal_form_message + '\n' + 'Appointment date: ' + modal_form_appontment_date
+		
+		email_from = EMAIL_HOST_USER
+		recipient_list = ['pacoqara@gmail.com',]
+		send_mail( 'Appoinment', message, modal_form_email, recipient_list )
+		
+	data = { 'my_response': my_response }
+
+	return JsonResponse(data)
+        
     
 
     

@@ -126,13 +126,16 @@
 
 
 <script>
-      $(document).ready(function(){
+  $(document).ready(function(){
          
          
          
      $("#sndmsg").click(function ()
      {
-        
+      if($('#contact_form').valid()!=true)
+      {
+        return
+      }
       form_name=document.getElementById("form_name").value;
       form_email=document.getElementById("form_email").value;
       form_subject=document.getElementById("form_subject").value;
@@ -142,7 +145,8 @@
       
         
         $('#loadpic').attr("style", "visibility: visible");
-        $('#sndmsg').text('Sending message...').attr('disabled', true);
+        $('#sndmsg').text('Please wait').attr('disabled', true);
+
 
 
         $.ajax({
@@ -200,11 +204,6 @@
      
         });
        </script>
-     
-
-  
-
-
-
+    
 
   {% endblock %}

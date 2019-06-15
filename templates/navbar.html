@@ -31,10 +31,148 @@
                   </li>
                   
                   <li class="sm-display-block mt-sm-10 mb-sm-10" style="margin-bottom: 8px !important;">
-                    <!-- Modal: Appointment Starts -->
-                    <a class="bg-light p-5 text-theme-colored font-11 ajaxload-popup"  href="{% static 'ajax-load/form-appointment.html' %}">Make an Appointment</a>
-                    <!-- Modal: Appointment End -->
-                  </li>
+<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+    Make an Appointment
+  </button>
+</li>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="section-content bg-white p-30" >
+            <div class="row">
+              <div class="col-md-12">
+                <!-- Booking Form Starts -->
+                <p class="lead">I invite you to contact me or schedule time to talk.</p>
+                <!-- Appointment Form -->
+                <form id="popup_appointment_form" name="popup_appointment_form" class="" method="post">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input id="modal_form_name" name="modal_form_name" class="form-control" type="text" required="" placeholder="Enter Name" aria-required="true">
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input id="modal_form_email" name="modal_form_email" class="form-control email" type="email" required="" placeholder="Enter Email" aria-required="true">
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group mb-10">
+                          <input id="modal_form_phone" name="modal_form_phone" class="form-control" type="text" required="" placeholder="Enter Phone" aria-required="true">
+                        </div>
+                      </div>
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input id="modal_form_appontment_date" name="modal_form_appontment_date" class="form-control datetime-picker" type="text" placeholder="Appoinment Date & Time" aria-required="true" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-10">
+                    <textarea id="modal_form_message" name="modal_form_message" class="form-control required"  placeholder="Enter Message" rows="5" aria-required="true"></textarea>
+                  </div>
+                  <div class="form-group mb-0 mt-20">
+                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                    <button type="submit" class="btn btn-dark btn-theme-colored" id="modalsndmsg">Send Message</button>
+                  </div>
+                </form>
+      
+                <!-- Appointment Form Validation-->
+                <script>
+                    $(document).ready(function(){
+                           
+                           
+                           
+                       $("#modalsndmsg").click(function ()
+                       {
+                        if($('#popup_appointment_form').valid()!=true)
+                        {
+                          return
+                        }
+                        modal_form_name=document.getElementById("modal_form_name").value;
+                        modal_form_email=document.getElementById("modal_form_email").value; 
+                        modal_form_phone=document.getElementById("modal_form_phone").value;
+                        modal_form_appontment_date=document.getElementById("modal_form_appontment_date").value;
+                        modal_form_message=document.getElementById("modal_form_message").value;
+                        
+                        
+                          
+                          
+                          $('#modalsndmsg').text('Please wait').attr('disabled', true);
+                  
+                  
+                  
+                          $.ajax({
+                                    type: "POST",
+                                    url: "{% url 'home:make_appointment' %}",
+                                    data: {
+                                              'modal_form_name':modal_form_name,
+                                              'modal_form_email':modal_form_email,
+                                              'modal_form_phone':modal_form_phone,
+                                              'modal_form_appontment_date':modal_form_appontment_date,
+                                              'modal_form_message':modal_form_message,
+                                              
+                                              'csrfmiddlewaretoken': '{{ csrf_token }}',
+                  
+                                            },
+                                    dataType: 'json',
+                  
+                                    success: function (data) {
+                                    if (data) {
+                                        
+                                        if (data['my_response']=='OK'){
+                                          
+                                          document.getElementById("modal_form_name").value='';
+                                          document.getElementById("modal_form_email").value='';
+                                          document.getElementById("modal_form_phone").value='';
+                                          document.getElementById("modal_form_message").value='';
+                  
+                                          
+                                          $('#modalsndmsg').text('Send Message').attr('disabled', false);
+
+                                          $('#exampleModalCenter').modal('toggle');
+                  
+                  
+                                        } else {
+                  
+                                            alert('Something went wrong!');
+                                        }
+                  
+                  
+                  
+                  
+                            }
+                  
+                            }
+                  
+                  
+                  
+                        });
+                          
+                       }
+                       );
+                       
+                       
+                       
+                        
+                       
+                       
+                          });
+                         </script>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+                  
                 </ul>
               </div>
             </div>
