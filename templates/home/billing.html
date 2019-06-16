@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{% block content %}
+  
+<!-- Start main-content -->
+<div class="main-content">
+        <!-- Section: inner-header -->
+        <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="http://placehold.it/1920x743">
+          <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h2 class="title">Insurance and Billing</h2>
+                  <ol class="breadcrumb text-center text-black mt-10">
+                    <li id="homemenu"><a href="{% url 'home:home' %}">Home</a></li>
+                    <li class="active text-theme-colored">Insurance and Billing</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div id="accordion1" class="panel-group accordion transparent">
+                        <div class="panel">
+                                <div class="panel-title"> <a class="active" aria-expanded="false"> <span class="open-sub"></span> <strong>Q. Payment Options: </strong></a> </div>
+                                <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
+                                  <div class="panel-content">
+                                    <p>We accept cash, checks and all major credit cards.</p> 
+                                    
+                                  </div>
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-title"> <a class="active" aria-expanded="false"> <span class="open-sub"></span> <strong>Q. Minor Patients: </strong></a> </div>
+                                <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
+                                  <div class="panel-content">
+                                    <p>The adult / guardian accompanying minors are responsible for full payment of services rendered.</p> 
+                                    
+                                  </div>
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-title"> <a class="active" aria-expanded="false"> <span class="open-sub"></span> <strong>Q. Collections: </strong></a> </div>
+                                <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
+                                  <div class="panel-content">
+                                    <p>We will send you a statement after your insurance company has processed your claim.  Your balance is due upon receipt of your bill.
+
+                                        </p> 
+                                    
+                                  </div>
+                                </div>
+                        </div>
+
+                 
+
+                <div class="panel">
+                        <div class="panel-title"> <a class="active" aria-expanded="false"> <span class="open-sub"></span> <strong>Q. Insurance Billing: </strong></a> </div>
+                        <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
+                          <div class="panel-content">
+                            <p>We will attempt to bill your insurance company.  Please be mindful that not all insurance plans cover urgent care services and if so, you are responsible for the bill.</p> 
+                            <p>Co Payments are due at the time of service.  Patients and guarantors are financially responsible for any services provided and not covered by your insurance plan.</p> 
+                            <p>It is your responsibility to know and understand your specific insurance plan and which benefits are covered. </p> 
+                            
+                          </div>
+                        </div>
+                </div>
+
+
+                  
+                  
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- end main-content -->
+
+<script>
+      $("#navMenus li.active").removeClass("active");
+      // adding classname 'active' to current click li 
+      $('#billingmenu').addClass("active");
+</script>
+
+
+
+    
+
+  {% endblock %}

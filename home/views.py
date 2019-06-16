@@ -16,31 +16,38 @@ class Home(TemplateView):
 
 
 
-# class About(TemplateView):
-# 	template_name = 'home/about.html'	
+class Billing(TemplateView):
+	template_name = 'home/billing.html'	
 	
-# 	def get_context_data(self, *args, **kwargs):
-# 		context = super(About, self).get_context_data(*args, **kwargs)
-# 		return context
+	def get_context_data(self, *args, **kwargs):
+		context = super(Billing, self).get_context_data(*args, **kwargs)
+		return context
 
 
 
-# class Services(TemplateView):
-# 	template_name = 'home/services.html'	
+class Services(TemplateView):
+	template_name = 'home/services.html'	
 	
-# 	def get_context_data(self, *args, **kwargs):
-# 		context = super(Services, self).get_context_data(*args, **kwargs)
-# 		return context
+	def get_context_data(self, *args, **kwargs):
+		context = super(Services, self).get_context_data(*args, **kwargs)
+		return context
 
 
 
 	
-# class Events(TemplateView):
-# 	template_name = 'home/events.html'	
+class Facilty(TemplateView):
+	template_name = 'home/facilty.html'	
 	
-# 	def get_context_data(self, *args, **kwargs):
-# 		context = super(Events, self).get_context_data(*args, **kwargs)
-# 		return context
+	def get_context_data(self, *args, **kwargs):
+		context = super(Facilty, self).get_context_data(*args, **kwargs)
+		return context
+
+class Blog(TemplateView):
+	template_name = 'home/blog.html'	
+	
+	def get_context_data(self, *args, **kwargs):
+		context = super(Blog, self).get_context_data(*args, **kwargs)
+		return context
 
 
 class Contact(FormView):
@@ -105,7 +112,7 @@ def make_appointment(request):
 		modal_form_appontment_date = request.POST.get('modal_form_appontment_date')
 		modal_form_message = request.POST.get('modal_form_message')
 
-		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n' + modal_form_message + '\n' + 'Appointment date: ' + modal_form_appontment_date
+		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n'  + 'Appointment date: '  + modal_form_appontment_date + '\n' +'Message body: ' + modal_form_message 
 		
 		email_from = EMAIL_HOST_USER
 		recipient_list = ['pacoqara@gmail.com',]
@@ -118,5 +125,26 @@ def make_appointment(request):
     
 
     
+def make_appointment_home(request):
+	
+	my_response = 'OK'
+	
+	if request.is_ajax():
+		form_name = request.POST.get('form_name')
+		form_email = request.POST.get('form_email')
+		form_phone = request.POST.get('form_phone')
+		form_reservation_date = request.POST.get('form_reservation_date')
+		form_message = request.POST.get('form_message')
 
+		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n'  + 'Appointment date: ' + form_reservation_date + '\n' + 'Message body: ' + form_message 
+		
+		email_from = EMAIL_HOST_USER
+		recipient_list = ['pacoqara@gmail.com',]
+		send_mail( 'Appoinment', message, form_email, recipient_list )
+		
+	data = { 'my_response': my_response }
+
+	return JsonResponse(data)
+        
+    
     

@@ -190,11 +190,10 @@
               <ul id="navMenus" class="menuzord-menu" >
 
                 <li id="homemenu"><a href="{% url 'home:home' %}">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Insurance & Billing</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="#">Facility</a></li>
-                <li><a href="#">Blog</a></li>
+                <li id="servicesmenu"><a href="{% url 'home:services' %}">Services</a></li>
+                <li id="billingmenu"><a href="{% url 'home:billing' %}">Insurance & Billing</a></li>
+                <!-- <li id="faciltygmenu"><a href="{% url 'home:facilty' %}">Facility</a></li> -->
+                <li id="blogmenu"><a href="{% url 'home:blog' %}">Blog</a></li>
                 <li id="contactmenu"><a  href="{% url 'home:contact' %}">Contact</a></li>
                 
               </ul>

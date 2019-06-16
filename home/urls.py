@@ -10,12 +10,14 @@ urlpatterns = [
     
     
     path('', views.Home.as_view(), name='home'),
-    # path('about', views.About.as_view(), name='about'),
-    # path('services', views.Services.as_view(), name='services'),
-    # path('events', views.Events.as_view(), name='events'),
+    path('billing', views.Billing.as_view(), name='billing'),
+    path('services', views.Services.as_view(), name='services'),
+    path('facilty', views.Facilty.as_view(), name='facilty'),
     path('contact', views.Contact.as_view(), name='contact'),
+    path('blog', views.Blog.as_view(), name='blog'),
     path('sending_email', views.sending_email, name='sending_email'),
     path('make_appointment', views.make_appointment, name='make_appointment'),
+    path('make_appointment_home', views.make_appointment_home, name='make_appointment_home'),
     
     
    
