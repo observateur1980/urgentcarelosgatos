@@ -70,7 +70,7 @@ class Contact(FormView):
 		message =form.cleaned_data['message']
 		message = 'Name: ' + name + '\n' + 'Phone: ' + phone + '\n' + 'Email: ' + email + '\n' + message
 		email_from = EMAIL_HOST_USER
-		recipient_list = ['pacoqara@gmail.com',]
+		recipient_list = ['losgatosurgentcare@gmail.com',]
 		send_mail( subject, message, email_from, recipient_list )
 		return super(Contact, self).form_valid(form)
 
@@ -90,7 +90,7 @@ def sending_email(request):
 		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n' + form_message
 		
 		email_from = EMAIL_HOST_USER
-		recipient_list = ['pacoqara@gmail.com',]
+		recipient_list = ['losgatosurgentcare@gmail.com',]
 		send_mail( form_subject, message, form_email, recipient_list )
 		
 	data = { 'my_response': my_response }
@@ -115,7 +115,7 @@ def make_appointment(request):
 		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n'  + 'Appointment date: '  + modal_form_appontment_date + '\n' +'Message body: ' + modal_form_message 
 		
 		email_from = EMAIL_HOST_USER
-		recipient_list = ['pacoqara@gmail.com',]
+		recipient_list = ['losgatosurgentcare@gmail.com',]
 		send_mail( 'Appoinment', message, modal_form_email, recipient_list )
 		
 	data = { 'my_response': my_response }
@@ -139,7 +139,7 @@ def make_appointment_home(request):
 		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n'  + 'Appointment date: ' + form_reservation_date + '\n' + 'Message body: ' + form_message 
 		
 		email_from = EMAIL_HOST_USER
-		recipient_list = ['pacoqara@gmail.com',]
+		recipient_list = ['losgatosurgentcare@gmail.com',]
 		send_mail( 'Appoinment', message, form_email, recipient_list )
 		
 	data = { 'my_response': my_response }
