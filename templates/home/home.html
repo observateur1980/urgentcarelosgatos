@@ -200,7 +200,7 @@
                     </ul>
                   </div>
                   <br>
-                  <a href="#" class="btn btn-read-more text-gray-lighter mt-10">Make an appoinment</a>
+                  <a href="#" class="btn btn-read-more text-gray-lighter mt-10" onclick="document.getElementById('modalbuttonmakeappint').click();">Make an appoinment</a>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@
                   <h3 class="text-uppercase text-white mt-0">Emergency Case</h3>
                   <p class="text-white">Because our staff consists of emergency room trained personnel we are able to see a wide variety of cases such as pediatrics, internal medicine, and surgical problems.</p>
                   <h3 class="text-white">(408) 384-9719</h3>
-                  <a href="#" class="btn-read-more text-white">List of Services</a>
+                  <a href="{% url 'home:services'%}" class="btn-read-more text-white">List of Services</a>
                 </div>
               </div>
             </div>
@@ -228,8 +228,8 @@
             <h2 class="text-theme-colored mt-0">Medical Director</h2>
             <p class="font-weight-600">Our Urgent Care Facility is staffed by Board Certified Physicians</p>
             <p class="mt-20">Dr. Tabrizi grew up in the San Francisco Bay Area. She attended Monta Vista High School in Cupertino and graduated from UC Berkeley.   She completed Emergency Medicine training at Johns Hopkins University.  She is Board Certified in Emergency Medicine and is a member of American College of Emergency Physicians.  She has more than 15 years of experience in Emergency Medicine , Urgent Care and Family Practice.</p>
-            <p class="mt-20"><img src="{% static 'images/signature.png' %}" alt=""></p>
-            <a href="#" class="btn btn-default btn-theme-colored mt-15 mb-sm-30">My Blog and Articles</a>
+            <p class="mt-20"><img src="" alt=""></p>
+            <a href="{% url 'home:blog' %}" class="btn btn-default btn-theme-colored mt-15 mb-sm-30">My Blog and Articles</a>
           </div>
           <div class="col-md-4">
             <img src="{% static 'images/ft.jpg' %}" alt="">
