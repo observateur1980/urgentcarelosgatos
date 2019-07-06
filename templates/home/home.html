@@ -541,16 +541,16 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group mb-30">
                           <input name="form_phone" id="form_phone" class="form-control required phone" type="text" placeholder="Enter Phone">
                     </div>
                   </div>
-                  <div class="col-sm-6">
+                  <!-- <div class="col-sm-6">
                     <div class="form-group mb-30">
                       <input name="form_reservation_date" id="form_reservation_date" class="form-control required datetime-picker" type="text" placeholder="Reservation Date" aria-required="true">
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                     <div class="form-group mb-20">
                   <textarea name="form_message" id="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
@@ -576,7 +576,7 @@
                     form_name=document.getElementById("form_name").value;
                     form_email=document.getElementById("form_email").value;
                     form_phone=document.getElementById("form_phone").value;
-                    form_reservation_date=document.getElementById("form_reservation_date").value;
+                    // form_reservation_date=document.getElementById("form_reservation_date").value;
                     form_message=document.getElementById("form_message").value;
                     
                     
@@ -593,7 +593,7 @@
                                           'form_name':form_name,
                                           'form_email':form_email,
                                           'form_phone':form_phone,
-                                          'form_reservation_date':form_reservation_date,
+                                          // 'form_reservation_date':form_reservation_date,
                                           'form_message':form_message,
                                           
                                           'csrfmiddlewaretoken': '{{ csrf_token }}',
@@ -607,7 +607,7 @@
                                     if (data['my_response']=='OK'){
                                       document.getElementById("form_name").value='';
                                       document.getElementById("form_email").value='';
-                                      document.getElementById("form_reservation_date").value='';
+                                      // document.getElementById("form_reservation_date").value='';
                                       document.getElementById("form_phone").value='';
                                       document.getElementById("form_message").value='';
               

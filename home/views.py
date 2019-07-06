@@ -109,10 +109,10 @@ def make_appointment(request):
 		modal_form_email = request.POST.get('modal_form_email')
 		modal_form_phone = request.POST.get('modal_form_phone')
 		
-		modal_form_appontment_date = request.POST.get('modal_form_appontment_date')
+		# modal_form_appontment_date = request.POST.get('modal_form_appontment_date')
 		modal_form_message = request.POST.get('modal_form_message')
 
-		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n'  + 'Appointment date: '  + modal_form_appontment_date + '\n' +'Message body: ' + modal_form_message 
+		message = 'Name: ' + modal_form_name + '\n' + 'Phone: ' + modal_form_phone + '\n' + 'Email: ' + modal_form_email + '\n'  +'Message body: ' + modal_form_message 
 		
 		email_from = EMAIL_HOST_USER
 		recipient_list = ['losgatosurgentcare@gmail.com',]
@@ -133,10 +133,10 @@ def make_appointment_home(request):
 		form_name = request.POST.get('form_name')
 		form_email = request.POST.get('form_email')
 		form_phone = request.POST.get('form_phone')
-		form_reservation_date = request.POST.get('form_reservation_date')
+		# form_reservation_date = request.POST.get('form_reservation_date')
 		form_message = request.POST.get('form_message')
 
-		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n'  + 'Appointment date: ' + form_reservation_date + '\n' + 'Message body: ' + form_message 
+		message = 'Name: ' + form_name + '\n' + 'Phone: ' + form_phone + '\n' + 'Email: ' + form_email + '\n'  +  'Message body: ' + form_message 
 		
 		email_from = EMAIL_HOST_USER
 		recipient_list = ['losgatosurgentcare@gmail.com',]
